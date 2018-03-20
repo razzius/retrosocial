@@ -1,0 +1,34 @@
+{% if user.is_authenticated %}
+  <p>Logged in as {{ user.username }}.
+  <a href="/logout">Logout</a></p>
+{% else %}
+  <a href="/login">Login</a>
+{% endif %}
+
+<h2>Users</h2>
+
+{% for user in users %}
+  <div>{{ user.username }}</div>
+{% endfor %}
+
+<h2>Posts</h2>
+
+{% for post in posts %}
+  <div>
+    {{ post.user.username }}:
+    {{ post.text }}
+  </div>
+{% endfor %}
+
+
+<h2>Make a post</h2>
+
+{% if user.is_authenticated %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Post</button>
+  </form>
+{% else %}
+  <p>You must be logged in to post.</p>
+{% endif %}
