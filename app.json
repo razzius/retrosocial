@@ -1,4 +1,4 @@
 {
-  'name': 'retrosocial',
-  'addons': ["heroku-postgresql", "heroku-redis"]
+  "name": "retrosocial",
+  "addons": ["heroku-postgresql", "heroku-redis"]
 }
