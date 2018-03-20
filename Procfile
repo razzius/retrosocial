@@ -1,1 +1,1 @@
-web: daphne retrosocial.asgi
+web: daphne retrosocial.asgi:application
